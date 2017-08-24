@@ -17,9 +17,9 @@
         <td><%= todo.title %></td>
         <td><%= todo.notes %></td>
 
-        <td><button type="submit" class="btn btn-primary"><%= link_to 'Show', todo %></button></td>
-        <td><button type="submit" class="btn btn-primary"><%= link_to 'Edit', edit_todo_path(todo) %></button></td>
-        <td><button type="submit" class="btn btn-primary"><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><button class="btn"><%= link_to 'Show', todo %></button></td>
+        <td><button class="btn"><%= link_to 'Edit', edit_todo_path(todo) %></button></td>
+        <td><button class="btn"><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,6 +27,6 @@
 
 <br>
 <div>
-  <button class="btn-primary" >
-<%= link_to 'New Todo', new_todo_path %>
-  </button>
+  <%= link_to new_todo_path, class: 'btn btn-success' do %>
+    <i class="glyphicon glyphicon-plus"></i> New Todo
+  <% end %>
